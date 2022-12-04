@@ -6,8 +6,7 @@ import (
 	"strconv"
 )
 
-type Solution struct {
-}
+type Solution struct{}
 
 func (s Solution) Part1(lines []string) (string, error) {
 	return solve(lines, 1)
