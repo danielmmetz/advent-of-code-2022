@@ -1,31 +1,25 @@
 package day01
 
 import (
+	"os"
 	"strings"
 	"testing"
 )
 
-var input = strings.Split(strings.TrimSpace(`
-1000
-2000
-3000
+func input(t *testing.T) []string {
+	t.Helper()
 
-4000
-
-5000
-6000
-
-7000
-8000
-9000
-
-10000
-`), "\n")
+	b, err := os.ReadFile("input.txt")
+	if err != nil {
+		t.Fatalf("read input.txt: %v", err)
+	}
+	return strings.Split(strings.TrimSpace(string(b)), "\n")
+}
 
 func TestPart1(t *testing.T) {
 	t.Parallel()
 
-	result, err := Solution{}.Part1(input)
+	result, err := Solution{}.Part1(input(t))
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
@@ -37,7 +31,7 @@ func TestPart1(t *testing.T) {
 func TestPart2(t *testing.T) {
 	t.Parallel()
 
-	result, err := Solution{}.Part2(input)
+	result, err := Solution{}.Part2(input(t))
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
