@@ -12,6 +12,7 @@ import (
 
 	"github.com.danielmmetz/advent-of-code-2022/day01"
 	"github.com.danielmmetz/advent-of-code-2022/day02"
+	"github.com.danielmmetz/advent-of-code-2022/day03"
 )
 
 func main() {
@@ -44,6 +45,8 @@ func mainE(_ context.Context) error {
 		s = day01.Solution{}
 	case 2:
 		s = day02.Solution{}
+	case 3:
+		s = day03.Solution{}
 	}
 
 	var result string
